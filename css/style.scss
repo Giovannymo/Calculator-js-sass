@@ -1,0 +1,67 @@
+@import './sass/base/variables';
+@import './sass/components/button';
+
+
+body{
+  background-color: $backgroundColor;
+  font-family: $fontMain;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.container{
+  background-color: tomato;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: auto 80px 110px 350px auto;
+
+  &__header{
+    background-color: aliceblue;
+    width: 100%;
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 1;
+  }
+
+  &__input{
+    background-color: #239842;
+    width: auto;
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 2;
+
+    &-number{
+      width: 99%;
+      height: 95%;
+      border: none;
+      border-radius: 8px;
+      background-color: $outputColor;
+      color: white;
+      font-size: 3rem;
+      font-weight: 500;
+      font-family: $fontMain;
+
+      text-align: right;
+    }
+  }
+
+  &__keyboard{
+    background-color: tan;
+
+    display: grid;
+    grid-column: 2 / span 2;
+    grid-row: 4 / span 1;
+
+/*   .keyboard__keycap{
+      background-color: $buttonColor;
+      grid-column: 1/span 1;
+    } */
+
+  }
+
+
+
+  
+
+}

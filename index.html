@@ -5,10 +5,51 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="" type="image/x-icon">
-  <link rel="stylesheet" href="./css/styles.css">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
   <title>Calculator | js</title>
 </head>
 <body>
+  <div class="container">
+   <header class="container__header">
+      <h6 class="header__title">
+        calc
+      </h6>
+      <div class="header__theme">
+        <h6>theme</h6>
+      </div>
+   </header>
+
+   <div class="container__input">
+    <input class="container__input-number" type="number" name="number" min="1" max="10">
+   </div>
+
+   <div class="container__keyboard">
+      <div class="keyboard__keycap keyboard__keycap-7">7</div>
+      <div class="keyboard__keycap keyboard__keycap-8">8</div>
+      <div class="keyboard__keycap keyboard__keycap-9">9</div>
+      <div class="keyboard__keycap keyboard__keycap-del">DEL</div>
+      <div class="keyboard__keycap keyboard__keycap-4">4</div>
+      <div class="keyboard__keycap keyboard__keycap-5">5</div>
+      <div class="keyboard__keycap keyboard__keycap-6">6</div>
+      <div class="keyboard__keycap keyboard__keycap-plus">+</div>
+      <div class="keyboard__keycap keyboard__keycap-1">1</div>
+      <div class="keyboard__keycap keyboard__keycap-2">2</div>
+      <div class="keyboard__keycap keyboard__keycap-3">3</div>
+      <div class="keyboard__keycap keyboard__keycap-rest">-</div>
+      <div class="keyboard__keycap keyboard__keycap-dot">.</div>
+      <div class="keyboard__keycap keyboard__keycap-0">0</div>
+      <div class="keyboard__keycap keyboard__keycap-slash">/</div>
+      <div class="keyboard__keycap keyboard__keycap-product">x</div>
+      <div class="keyboard__keycap keyboard__keycap-reset">RESET</div>
+      <div class="keyboard__keycap keyboard__keycap-enter"> = </div>
+   </div>
+   
+  </div>
+ 
   <script src="./js/index.js"></script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+body {
+  background-color: #3b4664;
+  font-family: "Unbounded", cursive;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container {
+  background-color: tomato;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto 80px 110px 350px auto;
+}
+.container__header {
+  background-color: aliceblue;
+  width: 100%;
+  grid-column: 2/span 2;
+  grid-row: 2/span 1;
+}
+.container__input {
+  background-color: #239842;
+  width: auto;
+  grid-row: 3/span 1;
+  grid-column: 2/span 2;
+}
+.container__input-number {
+  width: 99%;
+  height: 95%;
+  border: none;
+  border-radius: 8px;
+  background-color: #181f32;
+  color: white;
+  font-size: 3rem;
+  font-weight: 500;
+  font-family: "Unbounded", cursive;
+  text-align: right;
+}
+.container__keyboard {
+  background-color: tan;
+  grid-column: 2/span 2;
+  grid-row: 4/span 1;
+}/*# sourceMappingURL=style.css.map */
