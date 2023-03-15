@@ -1,4 +1,5 @@
 @import './sass/base/variables';
+@import './sass/components/button';
 
 
 body{
@@ -14,8 +15,8 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: tomato;
   display: grid;
   height: 100vh;
-  grid-template-columns: 35% repeat(2, 1fr) 35%;
-  grid-template-rows: auto 50px 110px 350px auto;
+  grid-template-columns: 33% repeat(2, 1fr) 33%;
+  grid-template-rows: auto 50px 110px 400px auto;
 
   &__header{
     background-color: aliceblue;
@@ -49,7 +50,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   &__keyboard{
-    background-color: rgb(241, 143, 7);
+    background-color: $backgroundColor;
     display: grid;
     justify-items: center;
     align-items: center;
@@ -58,12 +59,34 @@ input[type=number]::-webkit-outer-spin-button {
     grid-row: 4 / span 1;
 
     .keyboard__keycap{
-      width: 5rem;
-      height: 2.5rem;
+      @include buttonStyle($buttonColor, rgb(219, 173, 93) );
+      width: 65%;
+      height: 45px;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: $buttonColor;
+      border-radius: 6px;
+
+      &-del{
+        @include buttonStyle($buttonOpcionColor, rgb(68, 80, 106));
+        
+        color: white;
+      }  
+
+      &-reset{
+        @include buttonStyle($buttonOpcionColor, rgb(68, 80, 106));
+        grid-column: 1 / span 2;
+        width: 85%;
+        color: white;
+        letter-spacing: 2px;
+      }
+
+      &-enter{
+        @include buttonStyle($buttonEnterColor, rgb(173, 39, 39));
+        grid-column: 3 / span 2;
+        width: 85%;
+        color: white;
+      }
 
     }
   }

@@ -13,8 +13,8 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: tomato;
   display: grid;
   height: 100vh;
-  grid-template-columns: 35% repeat(2, 1fr) 35%;
-  grid-template-rows: auto 50px 110px 350px auto;
+  grid-template-columns: 33% repeat(2, 1fr) 33%;
+  grid-template-rows: auto 50px 110px 400px auto;
 }
 .container__header {
   background-color: aliceblue;
@@ -44,7 +44,7 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: right;
 }
 .container__keyboard {
-  background-color: rgb(241, 143, 7);
+  background-color: #3b4664;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -53,10 +53,32 @@ input[type=number]::-webkit-outer-spin-button {
   grid-row: 4/span 1;
 }
 .container__keyboard .keyboard__keycap {
-  width: 5rem;
-  height: 2.5rem;
+  background-color: #eae3db;
+  box-shadow: 0 5px rgb(219, 173, 93);
+  width: 65%;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #eae3db;
+  border-radius: 6px;
+}
+.container__keyboard .keyboard__keycap-del {
+  background-color: #647299;
+  box-shadow: 0 5px rgb(68, 80, 106);
+  color: white;
+}
+.container__keyboard .keyboard__keycap-reset {
+  background-color: #647299;
+  box-shadow: 0 5px rgb(68, 80, 106);
+  grid-column: 1/span 2;
+  width: 85%;
+  color: white;
+  letter-spacing: 2px;
+}
+.container__keyboard .keyboard__keycap-enter {
+  background-color: #d13f30;
+  box-shadow: 0 5px rgb(173, 39, 39);
+  grid-column: 3/span 2;
+  width: 85%;
+  color: white;
 }/*# sourceMappingURL=style.css.map */
