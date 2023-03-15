@@ -1,0 +1,13 @@
+@mixin mobileScreen(){
+  @media (max-width: 767.98px){
+    @content;
+    
+  }
+}
+
+
+@mixin mobileStructure(){
+  
+  grid-column: 1 / span 1;
+
+}

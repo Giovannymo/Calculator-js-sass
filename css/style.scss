@@ -1,5 +1,6 @@
 @import './sass/base/variables';
 @import './sass/components/button';
+@import './sass/layout/responsive';
 
 
 body{
@@ -15,9 +16,9 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: tomato;
   display: grid;
   height: 100vh;
+  row-gap: 10px;
   grid-template-columns: 33% repeat(2, 1fr) 33%;
   grid-template-rows: auto 50px 110px 400px auto;
-
   &__header{
     background-color: aliceblue;
     width: 100%;
@@ -57,6 +58,8 @@ input[type=number]::-webkit-outer-spin-button {
     grid-template-columns: repeat(4, 1fr);
     grid-column: 2 / span 2;
     grid-row: 4 / span 1;
+    border-radius: 10px;
+
 
     .keyboard__keycap{
       @include buttonStyle($buttonColor, rgb(219, 173, 93) );
@@ -90,9 +93,30 @@ input[type=number]::-webkit-outer-spin-button {
 
     }
   }
-
-
-
   
+
+}
+
+
+@include mobileScreen(){
+  .container{
+    background-color: aqua;
+    grid-template-columns: 0.8fr;
+    justify-content: center;
+
+    &__header{
+      @include mobileStructure();
+    }
+    &__input{
+      @include mobileStructure();
+
+    }
+
+    &__keyboard{
+      @include mobileStructure();
+
+    }
+  }
+
 
 }
