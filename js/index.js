@@ -3,10 +3,12 @@ import Calculadora from './calculator.js';
 //Variables DOM
 
 const $keyboard = document.querySelector('.container__keyboard');
-const $input = document.querySelector('.container__input-number')
-
+const $input = document.querySelector('.container__input-number');
+const $reset = document.querySelector('.keyboard__keycap-reset');
 
 $keyboard.addEventListener('click', pressButton);
+
+
 
 
 function pressButton(e){
@@ -14,7 +16,16 @@ function pressButton(e){
   const calculadora = new Calculadora(2,3);
 
   const btnSelect = e.target.classList[1];
+
+  if ($input.value.length >= 9) {
+    return;
+  }
+  
   console.log(btnSelect)
+  if(btnSelect == 'keyboard__keycap-reset'){
+    return $input.value = '0'
+
+  }
 
   switch(btnSelect){
 
