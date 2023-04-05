@@ -12,19 +12,51 @@ $keyboard.addEventListener('click', pressButton);
 
 function pressButton(e){
   e.preventDefault();
-  const btnSelect = e.target.classList[1];
-  optionSelect(btnSelect)
+  let btnSelect = Number(e.target.dataset.key);
+
+  if(isNaN(btnSelect)){
+    btnSelect = e.target.dataset.key;
+    selectOperator(btnSelect)
+  }else{
+    selectKeycap(btnSelect);
+}
+  
 
 }
 
+function selectKeycap(selection){
+  //Si el largo del input no es mayor que 9, retorne el valor seleccionado
+  if($input.value.length <= 9 ){
+    switch(selection){
+      case 0:
+        return $input.value += '0';
+      case 1:
+        return $input.value += '1';
+      case 2:
+        return $input.value += '2'; 
+      case 3:
+        return $input.value += '3'; 
+      case 4:
+        return $input.value += '4'; 
+      case 5:
+        return $input.value += '5'; 
+      case 6:
+        return $input.value += '6'; 
+      case 7:
+        return $input.value += '7'; 
+      case 8:
+        return $input.value += '8'; 
+      case 9:
+        return $input.value += '9'; 
+    }
+  }
+}
 
-function optionSelect(selection){
- 
 
-
+function selectOperator(selection){
   //Operation keycaps
   switch(selection){
-    case 'keyboard__keycap-del':
+    case 'del':
       let input = Array.from($input.value)
       input.pop()
       let newValue = input.join('')
@@ -43,34 +75,6 @@ function optionSelect(selection){
       return $input.value = ''; 
     case 'keyboard__keycap-enter':
       return $input.value += '1';  
-  }
-
-  //It know keycap press
-  if($input.value.length <= 9 ){
-    
-    switch(selection){
-      case 'keyboard__keycap-0':
-        return $input.value += '0';
-      case 'keyboard__keycap-1':
-        return $input.value += '1';
-      case 'keyboard__keycap-2':
-        return $input.value += '2'; 
-      case 'keyboard__keycap-3':
-        return $input.value += '3'; 
-      case 'keyboard__keycap-4':
-        return $input.value += '4'; 
-      case 'keyboard__keycap-5':
-        return $input.value += '5'; 
-      case 'keyboard__keycap-6':
-        return $input.value += '6'; 
-      case 'keyboard__keycap-7':
-        return $input.value += '7'; 
-      case 'keyboard__keycap-8':
-        return $input.value += '8'; 
-      case 'keyboard__keycap-9':
-        return $input.value += '9'; 
-    
-    }
   }
 
 }

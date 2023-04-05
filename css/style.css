@@ -64,12 +64,12 @@ input[type=number]::-webkit-outer-spin-button {
   align-items: center;
   border-radius: 6px;
 }
-.container__keyboard .keyboard__keycap-del {
+.container__keyboard .keycap-del {
   background-color: #647299;
   box-shadow: 0 5px rgb(68, 80, 106);
-  color: white;
+  color: rgb(255, 255, 255);
 }
-.container__keyboard .keyboard__keycap-reset {
+.container__keyboard .keycap-reset {
   background-color: #647299;
   box-shadow: 0 5px rgb(68, 80, 106);
   grid-column: 1/span 2;
@@ -77,7 +77,7 @@ input[type=number]::-webkit-outer-spin-button {
   color: white;
   letter-spacing: 2px;
 }
-.container__keyboard .keyboard__keycap-enter {
+.container__keyboard .keycap-result {
   background-color: #d13f30;
   box-shadow: 0 5px rgb(173, 39, 39);
   grid-column: 3/span 2;
