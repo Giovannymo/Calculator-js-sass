@@ -61,19 +61,19 @@ function selectOperator(selection){
       input.pop()
       let newValue = input.join('')
       return $input.value = newValue
-    case 'keyboard__keycap-plus':
+    case 'add':
       return $input.value += '1'; 
-    case 'keyboard__keycap-rest':
+    case 'rest':
       return $input.value += '1'; 
-    case 'keyboard__keycap-dot':
+    case 'dot':
       return $input.value += '.'; 
-    case 'keyboard__keycap-divide':
+    case 'divide':
       return $input.value += '1'; 
-    case 'keyboard__keycap-product':
+    case 'product':
       return $input.value += '1'; 
-    case 'keyboard__keycap-reset':
+    case 'reset':
       return $input.value = ''; 
-    case 'keyboard__keycap-enter':
+    case 'result':
       return $input.value += '1';  
   }
 
