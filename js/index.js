@@ -5,7 +5,10 @@ import Calculadora from './calculator.js';
 const $keyboard = document.querySelector('.container__keyboard');
 const $input = document.querySelector('.container__input-number');
 const calculadora = new Calculadora();
-let result;
+
+let input_old;
+
+let operation;
 
 $keyboard.addEventListener('click', pressButton);
 
@@ -17,14 +20,30 @@ function pressButton(e){
   let btnSelect = e.target.dataset.key;
   
   if(btnSelect == "result"){
+    selectOperator(operation)
     calculadora.show($input)
     calculadora.result = 0
     
   }else if(isNaN(btnSelect)){
-    selectOperator(btnSelect);
-    
+      operation = btnSelect;
+      input_old = $input.value
+      $input.value = ''
+      console.log("operation:\n");
+      console.log(operation);
+      
   }else{
+
     selectKeycap(btnSelect);
+    
+    console.log("selectKeycap:\n");
+    console.log($input.value);
+
+    if ( operation ) {
+      console.log("lel");
+      console.log(input_old);
+      console.log(Number($input.value));
+      // selectOperator(operation)
+    }
   }
   
   
@@ -34,7 +53,7 @@ function pressButton(e){
 
 function selectKeycap(selection){
   //Si el largo del input no es mayor que 9, retorne el valor seleccionado
-  if($input.value.length <= 9 ){
+  if($input.value.length <= 9){
     switch(selection){
       case '0':
         return $input.value += '0';
@@ -67,26 +86,35 @@ function selectOperator(selection){
   //Operation keycaps
   let num2 = Number($input.value);
 
+    
+  // return;
+
   switch(selection){
+    case 'add':
+      calculadora.add(num2)
+      break
+    case 'rest':
+      calculadora.result = input_old;
+      calculadora.rest(num2)
+      break
+    case 'divide':
+      break
+    case 'product':
+      break
+    case 'dot':
+      console.log("wtf!?")
+      console.log(selection)
+      return $input.value += '.'; 
     case 'del':
       const del = deleted($input.value)   
-      return $input.value = del
-    case 'add':
-      calculadora.add(num2 )     
-      return $input.value = ''; 
-    case 'rest':
-      calculadora.rest(num2)
-      return $input.value = ''; 
-    case 'dot':
-      return $input.value += '.'; 
-    case 'divide':
-      return $input.value = ''; 
-    case 'product':
-      return $input.value = ''; 
+      $input.value = del
     case 'reset':
       calculadora.result = 0
       return $input.value = ''; 
   }
+
+  $input.value = '';
+  return;
 
 }
 

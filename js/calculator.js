@@ -1,5 +1,6 @@
 export default class Calculadora {
   
+  result;
   constructor(){
     this.result=0
   }
@@ -11,7 +12,7 @@ export default class Calculadora {
   rest(num2){
     console.log(this.result);
     console.log(num2);
-    return console.log( this.result = Math.abs(this.result-num2));
+    return this.result = this.result-num2;
   }
 
   product(num2){
@@ -23,7 +24,7 @@ export default class Calculadora {
   }
 
   show(input){
-    this.add(Number(input.value))
+    // this.add(Number(input.value))
     input.value = String(this.result)
     console.log(this.result)
     this.result=0
