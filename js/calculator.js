@@ -9,7 +9,9 @@ export default class Calculadora {
   }
 
   rest(num2){
-    return console.log(this.result -= num2);
+    console.log(this.result);
+    console.log(num2);
+    return console.log( this.result = Math.abs(this.result-num2));
   }
 
   product(num2){

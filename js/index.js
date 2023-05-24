@@ -5,7 +5,7 @@ import Calculadora from './calculator.js';
 const $keyboard = document.querySelector('.container__keyboard');
 const $input = document.querySelector('.container__input-number');
 const calculadora = new Calculadora();
-let result = null;
+let result;
 
 $keyboard.addEventListener('click', pressButton);
 
@@ -76,13 +76,13 @@ function selectOperator(selection){
       return $input.value = ''; 
     case 'rest':
       calculadora.rest(num2)
-      return $input.value += ' '; 
+      return $input.value = ''; 
     case 'dot':
       return $input.value += '.'; 
     case 'divide':
-      return $input.value += '1'; 
+      return $input.value = ''; 
     case 'product':
-      return $input.value += '1'; 
+      return $input.value = ''; 
     case 'reset':
       calculadora.result = 0
       return $input.value = ''; 
