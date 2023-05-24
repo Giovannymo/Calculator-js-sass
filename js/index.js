@@ -76,7 +76,7 @@ function selectOperator(selection){
       return $input.value = ''; 
     case 'rest':
       calculadora.rest(num2)
-      return $input.value += ''; 
+      return $input.value += ' '; 
     case 'dot':
       return $input.value += '.'; 
     case 'divide':
