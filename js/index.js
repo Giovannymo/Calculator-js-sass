@@ -15,13 +15,15 @@ function pressButton(e){
   e.preventDefault();
   let btnSelect = e.target.dataset.key;
   let operator;
-  
+  let numerator, numbering;
     
   if(isNaN(btnSelect)){
-    operator = selectOperator(btnSelect);
+    operator = btnSelect;
+    numerator = $input.value;
     
   }else if(btnSelect == "result"){
-    result(operator)
+    numbering = $input.value;
+    result(numerator, numbering, operator)
     calculadora.show($input)
     calculadora.result = 0
     
@@ -32,6 +34,12 @@ function pressButton(e){
   
 }
 
+
+//aqui va la operacion con los dos numeros
+//falta poner que reciba los parametros y los ejecute
+function result (numerator, numbering, operator){
+  
+}
 
 
 function selectKeycap(selection){
@@ -63,45 +71,6 @@ function selectKeycap(selection){
   }
 }
 
-function result (operator){
-  if(operator === 'add'){
-    calculadora.add()
-  }
-}
-
-
-
-
-function selectOperator(selection){
-  //Operation keycaps
-  
-  let oldNumber = Number($input.value);
-  console.log(oldNumber);
-
-  //Que retorne que operador es
-  let operator = ''
-  switch(selection){
-    case 'del':
-      const del = deleted($input.value);  
-      return $input.value = del;
-    case 'add':
-      operator = 'add';
-      return $input.value = ''; 
-    case 'rest':
-      operator = 'rest'
-      return $input.value = ''; 
-    case 'dot':
-      return $input.value += '.'; 
-    case 'divide':
-      return $input.value = ''; 
-    case 'product':
-      return $input.value = ''; 
-    case 'reset':
-      calculadora.result = 0
-      return $input.value = ''; 
-  }
-
-}
 
 function deleted(currentValue){ 
   let input = Array.from(currentValue);

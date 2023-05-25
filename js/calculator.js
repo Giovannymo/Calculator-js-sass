@@ -6,8 +6,8 @@ export default class Calculadora {
     this.result=0
   }
 
-  add(num2){   
-    return this.result += num2;
+  add(){   
+    return this.result = this.num1 + this.num2;
   }
 
   rest(num2){
@@ -22,12 +22,6 @@ export default class Calculadora {
     return this.result /=  num2
   }
 
-  show(input){
-    this.add(Number(input.value))
-    input.value = String(this.result)
-    console.log(this.result)
-    this.result=0
-  }
 
 }
 
