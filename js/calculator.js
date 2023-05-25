@@ -1,6 +1,8 @@
 export default class Calculadora {
   
-  constructor(){
+  constructor(num1,num2){
+    this.num1 = num1
+    this.num2 = num2
     this.result=0
   }
 
@@ -9,8 +11,6 @@ export default class Calculadora {
   }
 
   rest(num2){
-    console.log(this.result);
-    console.log(num2);
     return console.log( this.result = Math.abs(this.result-num2));
   }
 

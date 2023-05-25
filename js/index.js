@@ -5,7 +5,6 @@ import Calculadora from './calculator.js';
 const $keyboard = document.querySelector('.container__keyboard');
 const $input = document.querySelector('.container__input-number');
 const calculadora = new Calculadora();
-let result;
 
 $keyboard.addEventListener('click', pressButton);
 
@@ -15,13 +14,16 @@ $keyboard.addEventListener('click', pressButton);
 function pressButton(e){
   e.preventDefault();
   let btnSelect = e.target.dataset.key;
+  let operator;
   
-  if(btnSelect == "result"){
+    
+  if(isNaN(btnSelect)){
+    operator = selectOperator(btnSelect);
+    
+  }else if(btnSelect == "result"){
+    result(operator)
     calculadora.show($input)
     calculadora.result = 0
-    
-  }else if(isNaN(btnSelect)){
-    selectOperator(btnSelect);
     
   }else{
     selectKeycap(btnSelect);
@@ -61,21 +63,32 @@ function selectKeycap(selection){
   }
 }
 
+function result (operator){
+  if(operator === 'add'){
+    calculadora.add()
+  }
+}
+
+
 
 
 function selectOperator(selection){
   //Operation keycaps
-  let num2 = Number($input.value);
+  
+  let oldNumber = Number($input.value);
+  console.log(oldNumber);
 
+  //Que retorne que operador es
+  let operator = ''
   switch(selection){
     case 'del':
-      const del = deleted($input.value)   
-      return $input.value = del
+      const del = deleted($input.value);  
+      return $input.value = del;
     case 'add':
-      calculadora.add(num2 )     
+      operator = 'add';
       return $input.value = ''; 
     case 'rest':
-      calculadora.rest(num2)
+      operator = 'rest'
       return $input.value = ''; 
     case 'dot':
       return $input.value += '.'; 
