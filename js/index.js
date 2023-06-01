@@ -9,43 +9,61 @@ const calculadora = new Calculadora();
 $keyboard.addEventListener('click', pressButton);
 
 
-
-
 function pressButton(e){
   e.preventDefault();
   let btnSelect = e.target.dataset.key;
+  let oldInput;
+  let newInput;
   let operator;
-  let numerator, numbering;
-    
-  if(isNaN(btnSelect)){
-    operator = btnSelect;
-    numerator = $input.value;
-    
-  }else if(btnSelect == "result"){
-    numbering = $input.value;
-    result(numerator, numbering, operator)
-    calculadora.show($input)
-    calculadora.result = 0
-    
-  }else{
-    selectKeycap(btnSelect);
+  console.log(btnSelect);
+
+  //Si el boton seleccionado es un numero
+  if(Number(btnSelect) || btnSelect=== 'dot'){
+    selectKeycapNumber(btnSelect)
+  }else if(btnSelect=== 'reset') {
+    $input.value = ''
   }
-  
-  
+
+  if(btnSelect === 'add'){
+    oldInput = $input.value
+    calculadora
+    $input.value = ''
+    console.log('soy suma', oldInput);
+  }
+  if(btnSelect === 'rest' ){
+    console.log('Soy una resta');
+  }
+  if(btnSelect === 'product'){
+    console.log('soy un producto');
+  }
+  if(btnSelect === 'divide'){
+    console.log('Soy una division');
+  }
+  if(btnSelect === 'result'){
+    newInput = $input.value
+    console.log('Soy un igual', newInput);
+  }
 }
+
+
+
 
 
 //aqui va la operacion con los dos numeros
 //falta poner que reciba los parametros y los ejecute
 function result (numerator, numbering, operator){
+
   
 }
 
 
-function selectKeycap(selection){
+function selectKeycapNumber(selection){
   //Si el largo del input no es mayor que 9, retorne el valor seleccionado
+
   if($input.value.length <= 9 ){
     switch(selection){
+      case 'dot':
+        return $input.value += '.';
       case '0':
         return $input.value += '0';
       case '1':
