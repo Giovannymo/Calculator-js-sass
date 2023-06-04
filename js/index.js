@@ -15,10 +15,8 @@ function pressButton(e){
   e.preventDefault();
   let btnSelect = e.target.dataset.key;
 
-  console.log(btnSelect);
-
   //Si el boton seleccionado es un numero
-  if(Number(btnSelect)){
+  if(!isNaN(Number(btnSelect))){
     selectKeycapNumber(btnSelect)
   }else if(btnSelect=== 'reset') {
     $input.value = ''
