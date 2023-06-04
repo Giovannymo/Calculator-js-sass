@@ -4,7 +4,9 @@ import Calculadora from './calculator.js';
 
 const $keyboard = document.querySelector('.container__keyboard');
 const $input = document.querySelector('.container__input-number');
-const calculadora = new Calculadora();
+let oldInput;
+let newInput;
+let operator;
 
 $keyboard.addEventListener('click', pressButton);
 
@@ -12,49 +14,58 @@ $keyboard.addEventListener('click', pressButton);
 function pressButton(e){
   e.preventDefault();
   let btnSelect = e.target.dataset.key;
-  let oldInput;
-  let newInput;
-  let operator;
+
   console.log(btnSelect);
 
   //Si el boton seleccionado es un numero
-  if(Number(btnSelect) || btnSelect=== 'dot'){
+  if(btnSelect || btnSelect=== 'dot'){
     selectKeycapNumber(btnSelect)
   }else if(btnSelect=== 'reset') {
     $input.value = ''
+  }else if(btnSelect === 'del'){
+    return $input.value = deleted($input.value)
   }
 
   if(btnSelect === 'add'){
-    oldInput = $input.value
-    calculadora
-    $input.value = ''
-    console.log('soy suma', oldInput);
+    operatorSelect(btnSelect)
   }
   if(btnSelect === 'rest' ){
-    console.log('Soy una resta');
+    operatorSelect(btnSelect)
   }
   if(btnSelect === 'product'){
-    console.log('soy un producto');
+    operatorSelect(btnSelect)
   }
   if(btnSelect === 'divide'){
-    console.log('Soy una division');
+    operatorSelect(btnSelect)
   }
-  if(btnSelect === 'result'){
-    newInput = $input.value
-    console.log('Soy un igual', newInput);
-  }
-}
-
-
-
-
-
-//aqui va la operacion con los dos numeros
-//falta poner que reciba los parametros y los ejecute
-function result (numerator, numbering, operator){
 
   
+  if(btnSelect === 'result'){
+    newInput = $input.value
+    const calculadora = new Calculadora(Number(oldInput), Number(newInput));
+
+    if(operator === 'add'){
+      calculadora.add();
+    }
+    if(operator === 'rest'){
+      calculadora.rest()
+    }
+    if(operator === 'product'){
+      calculadora.product()
+    }
+    if(operator === 'divide'){
+      calculadora.divide()
+    }
+
+
+    calculadora.show($input)
+  }
 }
+
+
+
+
+
 
 
 function selectKeycapNumber(selection){
@@ -63,7 +74,7 @@ function selectKeycapNumber(selection){
   if($input.value.length <= 9 ){
     switch(selection){
       case 'dot':
-        return $input.value += '.';
+        return $input.value += ',';
       case '0':
         return $input.value += '0';
       case '1':
@@ -89,6 +100,11 @@ function selectKeycapNumber(selection){
   }
 }
 
+function operatorSelect(btnSelect){
+  oldInput = $input.value
+  operator = btnSelect
+  $input.value = ''
+}
 
 function deleted(currentValue){ 
   let input = Array.from(currentValue);
