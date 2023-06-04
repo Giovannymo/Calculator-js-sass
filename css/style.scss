@@ -45,7 +45,6 @@ input[type=number]::-webkit-outer-spin-button {
       font-size: 3rem;
       font-weight: 500;
       font-family: $fontMain;
-
       text-align: right;
     }
   }
@@ -88,6 +87,10 @@ input[type=number]::-webkit-outer-spin-button {
       grid-column: 3 / span 2;
       width: 85%;
       color: white;
+    }
+    .keycap-0{
+      grid-column: 1 / span 2;
+      width: 85%;
     }
 
     

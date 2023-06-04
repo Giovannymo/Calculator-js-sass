@@ -84,6 +84,10 @@ input[type=number]::-webkit-outer-spin-button {
   width: 85%;
   color: white;
 }
+.container__keyboard .keycap-0 {
+  grid-column: 1/span 2;
+  width: 85%;
+}
 
 @media (max-width: 767.98px) {
   .container {
