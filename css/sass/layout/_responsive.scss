@@ -1,5 +1,5 @@
 @mixin mobileScreen(){
-  @media (max-width: 767.98px){
+  @media (max-width: 1000px){
     @content;
     
   }

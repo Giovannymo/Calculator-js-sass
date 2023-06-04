@@ -1,5 +1,5 @@
 body {
-  background-color: #3b4664;
+  background-color: #3c4665;
   font-family: "Unbounded", cursive;
 }
 
@@ -10,11 +10,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .container {
-  background-color: tomato;
   display: grid;
   height: 100vh;
   row-gap: 10px;
-  grid-template-columns: 33% repeat(2, 1fr) 33%;
+  grid-template-columns: 30% repeat(4, 1fr) 30%;
   grid-template-rows: auto 50px 110px 400px auto;
 }
 .container__header {
@@ -23,13 +22,13 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  grid-column: 2/span 2;
+  grid-column: 3/span 2;
   grid-row: 2/span 1;
 }
 .container__input {
   background-color: #239842;
   width: auto;
-  grid-column: 2/span 2;
+  grid-column: 3/span 2;
   grid-row: 3/span 1;
 }
 .container__input-number {
@@ -37,7 +36,7 @@ input[type=number]::-webkit-outer-spin-button {
   height: 95%;
   border: none;
   border-radius: 8px;
-  background-color: #181f32;
+  background-color: #111622;
   color: white;
   font-size: 3rem;
   font-weight: 500;
@@ -45,12 +44,13 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: right;
 }
 .container__keyboard {
-  background-color: #3b4664;
+  background-color: #1e263e;
   display: grid;
+  padding: 10px;
   justify-items: center;
   align-items: center;
   grid-template-columns: repeat(4, 1fr);
-  grid-column: 2/span 2;
+  grid-column: 3/span 2;
   grid-row: 4/span 1;
   border-radius: 10px;
 }
@@ -89,7 +89,7 @@ input[type=number]::-webkit-outer-spin-button {
   width: 85%;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 1000px) {
   .container {
     background-color: aqua;
     grid-template-columns: 0.8fr;
