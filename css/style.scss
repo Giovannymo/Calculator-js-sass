@@ -1,6 +1,7 @@
 @import './sass/base/darkmode';
 @import './sass/base/variables';
 @import './sass/components/button';
+@import './sass/components/switch';
 @import './sass/layout/responsive';
 
 body{
@@ -16,7 +17,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: grid;
   height: 100vh;
   row-gap: 10px;
-  grid-template-columns: 30% repeat(4, 1fr) 30%;
+  grid-template-columns: 25% repeat(4, 1fr) 25%;
   grid-template-rows: auto 50px 110px 400px auto;
   &__header{
     background-color: aliceblue;
@@ -26,6 +27,58 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
     grid-column: 3 / span 2;
     grid-row: 2 / span 1;
+    position: relative;
+
+    .header__theme{
+      background-color: #239842;
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      height: 50px;
+    }
+    
+    .switch{
+      color: #a4a4a4;
+      @include switchStyle($backgroundKeyboard);
+      span{
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        display: block;
+        background: none;
+      }
+      &::after{
+        content: "";
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        background-color: white;
+        top: 1;
+        left: 0;
+        right:unset;
+        border-radius: 100px;
+        transition: .3s ease all;
+        box-shadow: 0 0 2px 2px rgb(79, 79, 79, .2);
+      }
+
+      &.active-beige{
+        background-color: $backgroundColorTwo;
+        &::after{
+          right: 45px;
+          left: unset;
+        }
+      }
+
+      &.active-fucsia{
+        background-color: $backgroundColorThree;
+        &::after{
+          right: 0;
+          left: unset;
+        }
+      }
+    }
+    
   }
 
   &__input{

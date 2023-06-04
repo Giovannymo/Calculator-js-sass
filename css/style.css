@@ -13,7 +13,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: grid;
   height: 100vh;
   row-gap: 10px;
-  grid-template-columns: 30% repeat(4, 1fr) 30%;
+  grid-template-columns: 25% repeat(4, 1fr) 25%;
   grid-template-rows: auto 50px 110px 400px auto;
 }
 .container__header {
@@ -24,6 +24,62 @@ input[type=number]::-webkit-outer-spin-button {
   align-items: center;
   grid-column: 3/span 2;
   grid-row: 2/span 1;
+  position: relative;
+}
+.container__header .header__theme {
+  background-color: #239842;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  height: 50px;
+}
+.container__header .switch {
+  color: #a4a4a4;
+  background-color: #1e263e;
+  border-radius: 100px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.container__header .switch span {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  background: none;
+}
+.container__header .switch::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-color: white;
+  top: 1;
+  left: 0;
+  right: unset;
+  border-radius: 100px;
+  transition: 0.3s ease all;
+  box-shadow: 0 0 2px 2px rgba(79, 79, 79, 0.2);
+}
+.container__header .switch.active-beige {
+  background-color: #e7e7e5;
+}
+.container__header .switch.active-beige::after {
+  right: 45px;
+  left: unset;
+}
+.container__header .switch.active-fucsia {
+  background-color: #250626;
+}
+.container__header .switch.active-fucsia::after {
+  right: 0;
+  left: unset;
 }
 .container__input {
   background-color: #239842;

@@ -1,0 +1,12 @@
+
+@mixin switchStyle($bgColor){
+  background-color: $bgColor;
+  border-radius: 100px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+}
