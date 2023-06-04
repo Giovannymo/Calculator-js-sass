@@ -18,7 +18,7 @@ function pressButton(e){
   console.log(btnSelect);
 
   //Si el boton seleccionado es un numero
-  if(btnSelect || btnSelect=== 'dot'){
+  if(Number(btnSelect)){
     selectKeycapNumber(btnSelect)
   }else if(btnSelect=== 'reset') {
     $input.value = ''
@@ -73,8 +73,6 @@ function selectKeycapNumber(selection){
 
   if($input.value.length <= 9 ){
     switch(selection){
-      case 'dot':
-        return $input.value += ',';
       case '0':
         return $input.value += '0';
       case '1':
