@@ -113,6 +113,10 @@ input[type=number]::-webkit-outer-spin-button {
 .container__keyboard .keyboard__keycap {
   background-color: #eae3db;
   box-shadow: 0 5px rgb(219, 173, 93);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   width: 65%;
   height: 55px;
   display: flex;
@@ -123,11 +127,19 @@ input[type=number]::-webkit-outer-spin-button {
 .container__keyboard .keycap-del {
   background-color: #647299;
   box-shadow: 0 5px rgb(68, 80, 106);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   color: rgb(255, 255, 255);
 }
 .container__keyboard .keycap-reset {
   background-color: #647299;
   box-shadow: 0 5px rgb(68, 80, 106);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   grid-column: 1/span 2;
   width: 85%;
   color: white;
@@ -136,6 +148,10 @@ input[type=number]::-webkit-outer-spin-button {
 .container__keyboard .keycap-result {
   background-color: #d13f30;
   box-shadow: 0 5px rgb(173, 39, 39);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   grid-column: 3/span 2;
   width: 85%;
   color: white;

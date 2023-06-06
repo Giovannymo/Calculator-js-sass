@@ -1,4 +1,6 @@
 @mixin buttonStyle ($backgroundColor, $colorShadow){   
       background-color: $backgroundColor;
       box-shadow:0 5px $colorShadow;
+      cursor: pointer;
+      user-select: none;
 }
