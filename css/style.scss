@@ -1,11 +1,10 @@
-@import './sass/base/darkmode';
+@import './sass/base/themeMode';
 @import './sass/base/variables';
 @import './sass/components/button';
 @import './sass/components/switch';
 @import './sass/layout/responsive';
 
 body{
-  background-color: $backgroundColor;
   font-family: $fontMain;
 }
 input[type=number]::-webkit-inner-spin-button, 
@@ -102,7 +101,6 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   &__keyboard{
-    background-color: $backgroundKeyboard;
     display: grid;
     padding: 10px;
     justify-items: center;
@@ -114,7 +112,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 
     .keyboard__keycap{
-      @include buttonStyle($buttonColor, rgb(219, 173, 93) );
       width: 65%;
       height: 55px;
       display: flex;
@@ -122,13 +119,11 @@ input[type=number]::-webkit-outer-spin-button {
       align-items: center;
       border-radius: 6px;
     }
-    .keycap-del{
-      @include buttonStyle($buttonOpcionColor, rgb(68, 80, 106));      
+    .keycap-del{  
       color: rgb(255, 255, 255);
     }  
 
     .keycap-reset{
-      @include buttonStyle($buttonOpcionColor, rgb(68, 80, 106));
       grid-column: 1 / span 2;
       width: 85%;
       color: white;
@@ -136,7 +131,6 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .keycap-result{
-      @include buttonStyle($buttonEnterColor, rgb(173, 39, 39));
       grid-column: 3 / span 2;
       width: 85%;
       color: white;
@@ -152,6 +146,24 @@ input[type=number]::-webkit-outer-spin-button {
 
 }
 
+
+/*Change color theme*/
+
+.theme-default{
+  @include themeMode($backgroundColor,$backgroundKeyboard,$buttonColor,$buttonShadow,$buttonOpcionColor,$buttonOpcionShadow,$buttonEnterColor,$buttonEnterShadow,$outputColor, $outputFontColor);
+}
+
+.theme-light{
+  @include themeMode($backgroundColorTwo,$backgroundKeyboardTwo,$buttonColor,$buttonShadow,$buttonOpcionColorTwo,$buttonOpcionShadow,$buttonEnterColor,$buttonEnterShadow,$outputColorTwo,$outputFontColorTwo);
+}
+
+.theme-cyber-punk{
+  @include themeMode($backgroundColorThree,$backgroundKeyboardThree,$buttonColorThree,$buttonShadowThree,$buttonOpcionColorThree,$buttonShadowThree,$buttonEnterColorThree,$EnterThreeShadow,$outputColorThree,$outputFontColorThree,$colorFontButton);
+}
+
+
+
+/* Responsive design */
 
 @include mobileScreen(){
   .container{
