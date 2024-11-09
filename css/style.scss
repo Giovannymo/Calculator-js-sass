@@ -19,18 +19,19 @@ input[type=number]::-webkit-outer-spin-button {
   row-gap: 10px;
   grid-template-columns: 25% repeat(4, 1fr) 25%;
   grid-template-rows: auto 50px 110px 400px auto;
-  &__header{
-    background-color: aliceblue;
+  &__header{/* 
+    background-color: #a4a4a4; */
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     grid-column: 3 / span 2;
     grid-row: 2 / span 1;
+    
     position: relative;
 
     .header__theme{
-      background-color: #239842;
+      /* background-color: #239842; */
       display: flex;
       align-items: center;
       column-gap: 10px;
@@ -82,7 +83,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   &__input{
-    background-color: #239842;
+   /*  background-color: #239842; */
     width: auto;
     grid-column: 3 / span 2;
     grid-row: 3 / span 1;
