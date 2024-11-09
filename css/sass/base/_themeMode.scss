@@ -1,0 +1,23 @@
+@mixin themeMode($backGroundColor, $colorKeyboard, $buttonColor, $shadowButton, $buttonOpcionColor, $shadowOpcion, $buttonEnterColor, $shadowEnter, $outputColor, $colorInput, $colorFontButton:null){
+  background-color: $backGroundColor;
+  .container__keyboard{
+    background-color: $colorKeyboard;
+  }
+  .keyboard__keycap{
+    @include buttonStyle($buttonColor, $shadowButton );
+    color: $colorFontButton;
+  }
+  .keycap-del{
+    @include buttonStyle($buttonOpcionColor,$shadowOpcion);
+  }
+  .keycap-reset{
+    @include buttonStyle($buttonOpcionColor, $shadowOpcion);
+  }
+  .keycap-result{
+    @include buttonStyle($buttonEnterColor,$shadowEnter);
+  }
+  .container__input-number{
+    background-color: $outputColor ;
+    color: $colorInput;
+  }
+}

@@ -1,5 +1,4 @@
 body {
-  background-color: #3c4665;
   font-family: "Unbounded", cursive;
 }
 
@@ -73,7 +72,7 @@ background-color: #a4a4a4; */
   left: unset;
 }
 .container__header .switch.active-fucsia {
-  background-color: #250626;
+  background-color: #30064a;
 }
 .container__header .switch.active-fucsia::after {
   right: 0;
@@ -98,7 +97,6 @@ background-color: #a4a4a4; */
   text-align: right;
 }
 .container__keyboard {
-  background-color: #1e263e;
   display: grid;
   padding: 10px;
   justify-items: center;
@@ -132,6 +130,9 @@ background-color: #a4a4a4; */
   box-shadow: 0 5px rgb(68, 80, 106);
   cursor: pointer;
   user-select: none;
+  color: rgb(255, 255, 255);
+}
+.container__keyboard .keycap-reset {
   grid-column: 1/span 2;
   width: 85%;
   color: white;
@@ -151,6 +152,138 @@ background-color: #a4a4a4; */
   width: 85%;
 }
 
+/*Change color theme*/
+.theme-default {
+  background-color: #3c4665;
+}
+.theme-default .container__keyboard {
+  background-color: #1e263e;
+}
+.theme-default .keyboard__keycap {
+  background-color: #eae3db;
+  box-shadow: 0 5px #c6a47e;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.theme-default .keycap-del {
+  background-color: #647299;
+  box-shadow: 0 5px #424e6e;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.theme-default .keycap-reset {
+  background-color: #647299;
+  box-shadow: 0 5px #424e6e;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.theme-default .keycap-result {
+  background-color: #d13f30;
+  box-shadow: 0 5px #6e2f25;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.theme-default .container__input-number {
+  background-color: #111622;
+  color: white;
+}
+
+.theme-light {
+  background-color: #e7e7e5;
+}
+.theme-light .container__keyboard {
+  background-color: #e0dbd8;
+}
+.theme-light .keyboard__keycap {
+  background-color: #eae3db;
+  box-shadow: 0 5px #c6a47e;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.theme-light .keycap-del {
+  background-color: #1b8194;
+  box-shadow: 0 5px #424e6e;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.theme-light .keycap-reset {
+  background-color: #1b8194;
+  box-shadow: 0 5px #424e6e;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.theme-light .keycap-result {
+  background-color: #d13f30;
+  box-shadow: 0 5px #6e2f25;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.theme-light .container__input-number {
+  background-color: #f3f6fd;
+  color: rgb(55, 55, 55);
+}
+
+.theme-cyber-punk {
+  background-color: #30064a;
+}
+.theme-cyber-punk .container__keyboard {
+  background-color: #220644;
+}
+.theme-cyber-punk .keyboard__keycap {
+  background-color: #2e0955;
+  box-shadow: 0 5px #820ca5;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: #f2db46;
+}
+.theme-cyber-punk .keycap-del {
+  background-color: #8f086d;
+  box-shadow: 0 5px #820ca5;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.theme-cyber-punk .keycap-reset {
+  background-color: #8f086d;
+  box-shadow: 0 5px #820ca5;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.theme-cyber-punk .keycap-result {
+  background-color: #00def7;
+  box-shadow: 0 5px #3bcada;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.theme-cyber-punk .container__input-number {
+  background-color: #220644;
+  color: #f2db46;
+}
+
+/* Responsive design */
 @media (max-width: 1000px) {
   .container {
     background-color: aqua;
